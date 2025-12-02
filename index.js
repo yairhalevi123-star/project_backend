@@ -28,7 +28,9 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res) => {
   console.log(req.body);
-  res.send("dsdw").status(202);
+  const name = req.body.name;
+  const food = req.body.food;
+  res.send(`<h1>hello ${name} your liked food is ${food}</h1>`).status(202);
 });
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
