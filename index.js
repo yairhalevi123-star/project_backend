@@ -6,6 +6,7 @@ import morgan from "morgan";
 import path from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const absolutePath = path.join(__dirname, "..", "frontend", "index.html");
+// const absolutePath = path.join(__dirname, "..", "frontend", "index.html");
 const absolutePath1 = path.join(__dirname, "..", "frontend", "index2.html");
 const app = express();
 const port = 3000;
