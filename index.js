@@ -5,8 +5,8 @@ import bodyParser from "body-parser";
 import morgan from "morgan";
 import path from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const absolutePath = path.join(__dirname, "..", "frontend", "index.html");
-const absolutePath1 = path.join(__dirname, "..", "frontend", "index2.html");
+const absolutePath = path.join(__dirname, "..", "progrcat", "index.html"); // תשנה לדרך שלך
+//const absolutePath1 = path.join(__dirname, "..", "frontend", "index2.html");
 const app = express();
 const port = 3000;
 
@@ -21,14 +21,15 @@ app.use(morgan("tiny"));
 app.use(logger);
 app.get("/", (req, res) => {
   res.sendFile(absolutePath);
+  // res.send("gtdhfcgvc");
 });
 
 app.post("/submit", (req, res) => {
   console.log(req.body);
   const name = req.body.name;
   const food = req.body.food;
-  res.send(`<h1>hello ${name} your liked food is ${food}</h1>`).status(202);
-  // res.sendFile(absolutePath1);
+  res.send(`<h1>hello ${name} your liked food is ${food} you are the best </h1>`).status(202);
+  //res.sendFile(absolutePath1);
 });
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
